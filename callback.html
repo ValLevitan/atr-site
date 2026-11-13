@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Connecting - Asher Tanner Rose, LLC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><a href="index.html">Asher Tanner Rose</a></header>
+  <main>
+    <h1>Finishing the QuickBooks connection</h1>
+    <p id="msg">Passing the connection to the ATR computer. Please wait.</p>
+  </main>
+  <script>
+    // Hands the sign-in reply to the sign-in helper running on the same ATR computer.
+    // Nothing is stored or sent anywhere else.
+    if (location.search) {
+      location.replace("http://localhost:8000/callback" + location.search);
+    } else {
+      document.getElementById("msg").textContent = "Nothing to do here.";
+    }
+  </script>
+</body>
+</html>
